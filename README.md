@@ -86,7 +86,7 @@ src/                            # Source code for data processing, model trainin
 ### 🐑 Clone the repository
 ```bash
 git clone https://github.com/odietric/ukraine-mapping-tool.git
-cd ukraine_mapping
+cd ukraine-mapping-tool
 ```
 
 ### 🐍 Python Environment
@@ -94,8 +94,9 @@ To create the environment, run the following command:
 
 ```bash
 conda create -p ./ukraine_env python=3.12 geopandas gdal -c conda-forge --strict-channel-priority --yes
-./ukraine_env/bin/python -m pip install uv
-./ukraine_env/bin/python -m uv pip install -r requirements.txt
+conda activate ./ukraine_env
+python -m pip install uv
+python -m uv pip install -r requirements.txt
 ```
 or simply:
 
