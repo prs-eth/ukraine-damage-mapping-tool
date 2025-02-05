@@ -13,6 +13,7 @@
 [![Paper](https://img.shields.io/badge/arXiv-PDF-b31b1b)](https://arxiv.org/abs/2406.02506)
 [![Dashboard 1](https://img.shields.io/badge/Damage_Mapping_Tool-link-blue)](https://olidietrich.users.earthengine.app/view/rapid-damage-assessment-sentinel1)
 [![Dashboard 2](https://img.shields.io/badge/Ukraine_Damage_Explorer-link-gold)](https://olidietrich.users.earthengine.app/view/ukraine-damage-explorer)
+[![Zenodo](https://img.shields.io/badge/Zenodo-link-green)](https://zenodo.org/records/14811504)
 ![MIT License](https://img.shields.io/badge/License-MIT-929292.svg)
 
 ![Ukraine Damage Map](doc/ukraine_damage_adm3_agg.png)
@@ -24,7 +25,7 @@
 
 
 ## 🇺🇦 Results
-The results, including heatmaps and building footprints, can be found here:  ⏳ <span style="color:red; font-weight:bold;">COMING SOON</span>⏳
+The results, including heatmaps and building footprints, can be found [here](https://zenodo.org/records/14811504).
 
 ## 🎮 Dashboards
 We provide two Google Earth Engine dashboards:
