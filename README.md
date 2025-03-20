@@ -172,12 +172,13 @@ To download the results from Google Drive, you need to configure the Google Driv
 
 ## Citation
 ```bibtex
-@article{dietrich2024ukraine,
-  title={An Open-Source Tool for Mapping War Destruction at Scale in Ukraine using Sentinel-1 Time Series},
-  author={Olivier Dietrich and Torben Peters and Vivien Sainte Fare Garnot and Valerie Sticher and Thao Ton-That Whelan and Konrad Schindler and Jan Dirk Wegner},
-  journal={arXiv preprint arXiv:/2406.02506},
-  year={2024},
-  url={https://arxiv.org/abs/2406.02506},
+@article{Dietrich2025,
+  author={Dietrich, Olivier and Peters, Torben and Sainte Fare Garnot, Vivien and Sticher, Valerie and Ton-That Whelan, Thao and Schindler, Konrad and Wegner, Jan Dirk},
+  title={An open-source tool for mapping war destruction at scale in Ukraine using Sentinel-1 time series},
+  journal={Communications Earth {\&} Environment},
+  year={2025},
+  doi={10.1038/s43247-025-02183-7},
+  url={https://doi.org/10.1038/s43247-025-02183-7}
 }
 ```
 
