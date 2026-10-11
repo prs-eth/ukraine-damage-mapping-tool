@@ -1,27 +1,37 @@
+import os
 from pathlib import Path
 
-# ------------------- PROJECT CONSTANTS -------------------
-AOIS_TRAIN = [f"UKR{i}" for i in range(1, 5)]
-AOIS_TEST = [f"UKR{i}" for i in range(5, 19)]
-AOIS = AOIS_TRAIN + AOIS_TEST
-
-S1_BANDS = ["VV", "VH"]
-S2_BANDS = ["B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B8A", "B9", "B11", "B12"]
-
-UKRAINE_WAR_START = "2022-02-24"
-
-
-# ------------------- LOCAL PATH CONSTANTS -------------------
-constants_path = Path(__file__)
-SRC_PATH = constants_path.parent
+# Paths to repositories and parameters
+SRC_PATH = Path(__file__).resolve().parent
 PROJECT_PATH = SRC_PATH.parent
 
 SECRETS_PATH = PROJECT_PATH / "secrets"
-
 DATA_PATH = PROJECT_PATH / "data"
-
 OVERTURE_PATH = DATA_PATH / "overture_buildings"
 
-# ------------------- GEE PATH CONSTANTS -------------------
-ASSETS_PATH = "projects/rmac-ethz/assets/ukraine-mapping-tool/"
-OLD_ASSETS_PATH = "projects/rmac-ethz/assets/"
+# ---------------------------- GEE PATH CONSTANTS ----------------------------
+# Dynamically retrieve the currently registered user's GEE cloud project path
+try:
+    import ee
+    data_mod = ee.data
+    # Safe methods across different versions of earthengine-api
+    if hasattr(data_mod, 'get_project') and data_mod.get_project():
+        current_project = data_mod.get_project()
+    elif hasattr(data_mod, '_cloud_project') and data_mod._cloud_project:
+        current_project = data_mod._cloud_project
+    else:
+        raise ValueError(
+            "The cloud project path returned by Earth Engine is empty. "
+            "This usually happens when ee.Initialize() was called without a specific 'project' ID."
+        )
+    ASSETS_PATH = f"projects/{current_project}/assets/"
+except Exception as e:
+    raise RuntimeError(
+        f"\n\n[ERROR] Failed to dynamically retrieve the Google Earth Engine project path!\n"
+        f"UNDERLYING ERROR DETAILS: {e}\n"
+        "RESOLUTION: Please re-run the authentication and initialization steps in your environment "
+        "and explicitly provide your valid Earth Engine Project ID, for example:\n"
+        "    import ee\n"
+        "    ee.Authenticate()\n"
+        "    ee.Initialize(project='YOUR-PROJECT-ID-HERE')\n"
+    ) from e
